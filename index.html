@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>1학년 시계 놀이터</title>
+<style>
+:root{font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:#213047;background:#eef5ff;--blue:#3269e9;--red:#ed5c55;--ink:#26374f;--line:#dbe5f5}*{box-sizing:border-box}body{margin:0;min-height:100dvh}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.43;cursor:default}.app{max-width:550px;margin:auto;padding:14px 14px max(22px,env(safe-area-inset-bottom))}.top{display:flex;align-items:center;justify-content:space-between;margin:4px 2px 14px}.brand{font-size:21px;font-weight:900}.brand small{font-size:12px;font-weight:600;color:#6e7c96;display:block}.home-btn{border:1px solid var(--line);border-radius:14px;padding:10px 13px;background:white;color:var(--ink);font-weight:800}.panel{background:white;border-radius:25px;box-shadow:0 6px 28px #29467712;padding:20px 17px;margin-bottom:12px}.h1{font-size:26px;font-weight:900;letter-spacing:-1px;margin:0 0 8px}.muted{color:#687b99;font-size:14px;line-height:1.6}.modecards{display:grid;gap:12px;margin-top:19px}.modecard{width:100%;text-align:left;padding:20px 18px;border:2px solid #e4eaf5;border-radius:19px;background:#f9fbff;display:flex;gap:15px;align-items:center}.modecard:active{background:#edf4ff}.emoji{font-size:34px}.modecard strong{display:block;font-size:19px;color:#26374f}.modecard span span{font-size:13px;color:#687b99;line-height:1.6}.group-title{font-size:15px;font-weight:900;margin:19px 0 10px}.segments{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.segments.two{grid-template-columns:repeat(2,minmax(0,1fr))}.seg{border:2px solid #e1e8f4;background:white;border-radius:13px;padding:12px 2px;font-size:15px;font-weight:900;color:#52657f}.seg.sel{background:#eaf1ff;border-color:var(--blue);color:#2158d5}.start{width:100%;border:0;border-radius:17px;background:var(--blue);color:white;font-size:19px;font-weight:900;padding:17px 12px;margin-top:24px}.game-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.progress{font-size:14px;font-weight:800;color:#7586a2}.score{font-size:14px;font-weight:900;color:#2d66e3;background:#edf3ff;border-radius:30px;padding:8px 12px}.progressbar{height:8px;background:#eaf0fa;border-radius:8px;margin-top:14px;overflow:hidden}.progressbar>div{height:100%;background:#4d85f4;transition:width .25s}.question{text-align:center;font-size:22px;font-weight:900;line-height:1.4;min-height:60px;margin:16px 0 5px}.clock-holder{width:min(100%,350px);margin:0 auto;position:relative;touch-action:none;user-select:none}.clock-holder svg{display:block;width:100%;height:auto;overflow:visible;touch-action:none}.clock-holder.draw{cursor:crosshair}.legend{display:flex;justify-content:center;gap:20px;font-size:13px;font-weight:800;margin:7px 0 2px;color:#66788e}.legend b{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px}.feedback{min-height:53px;text-align:center;font-size:15px;font-weight:800;line-height:1.5;padding:10px 3px;color:#697e9d}.feedback.good{color:#138e62}.feedback.bad{color:#d45047}.feedback.info{color:#3269e9}.answer{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:13px}.number{border:2px solid #e1e7f1;background:#fff;color:#26374f;border-radius:14px;padding:14px 2px;font-size:21px;font-weight:900}.number.sel{border-color:var(--blue);background:#eaf1ff;color:#275bd2}.minute-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.minute-row button{border:2px solid #e1e7f1;background:#fff;border-radius:14px;padding:13px 2px;font-weight:900;font-size:17px}.minute-row button.sel{border-color:var(--blue);background:#eaf1ff;color:#275bd2}.selected{text-align:center;margin:14px 0 1px;font-size:19px;font-weight:900}.primary{border:0;border-radius:15px;background:var(--blue);color:white;padding:16px;font-size:18px;font-weight:900;width:100%;margin-top:12px}.secondary{border:2px solid #dce5f1;background:white;color:#49607f;padding:13px;border-radius:14px;font-size:16px;font-weight:800;flex:1}.btnrow{display:flex;gap:10px;margin-top:12px}.btnrow .primary{flex:1;margin:0}.target{font-size:31px;font-weight:950;text-align:center;margin:0;color:#245dcf}.instruction{text-align:center;color:#73849c;font-size:13px;line-height:1.5;margin:5px 0 0}.toggle{display:flex;align-items:center;justify-content:center;gap:10px;margin:6px auto 1px;border:0;background:#f0f5ff;color:#47618c;border-radius:25px;padding:9px 15px;font-size:13px;font-weight:800}.tip{font-size:12px;color:#8191a8;text-align:center;margin:6px 5px 0;line-height:1.5}.finish{text-align:center;padding:24px 6px}.finish .trophy{font-size:60px}.finish h2{font-size:27px}.bigscore{font-size:47px;font-weight:950;color:var(--blue);margin:15px 0}.hidden{display:none!important}
+@media(max-width:380px){.app{padding:10px 10px 20px}.panel{padding:15px 12px}.question{margin-top:10px}.number{padding:10px 2px}.clock-holder{width:min(100%,305px)}}
+
+/* 스마트폰 세로 화면에 모두 들어오는 압축형 학습 화면 */
+html,body{height:100%;overflow:hidden}
+.app{height:100dvh;min-height:0;display:flex;flex-direction:column;max-width:550px;padding:7px 10px max(7px,env(safe-area-inset-bottom));overflow:hidden}
+.top{flex:0 0 auto;margin:0 2px 7px;min-height:39px}.brand{font-size:18px}.brand small{font-size:10px}.home-btn{padding:7px 11px;font-size:13px}
+.panel{margin:0;min-height:0;padding:11px 13px;border-radius:20px}
+#menu,#settings,#end{overflow:auto;flex:1}
+#game{flex:1;display:flex;flex-direction:column;gap:0;overflow:hidden}
+#game.hidden{display:none!important}
+.game-upper{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;align-items:stretch}
+.game-head{flex:0 0 auto}.progress,.score{font-size:12px}.score{padding:5px 9px}
+.progressbar{margin-top:5px;height:5px;flex:0 0 auto}
+.question{font-size:clamp(17px,4.2vw,21px);min-height:0;margin:7px 0 2px;flex:0 0 auto}
+.target{font-size:25px;flex:0 0 auto}
+.clock-holder{width:auto;height:auto;flex:1 1 auto;min-height:0;max-width:min(100%,34dvh,300px);aspect-ratio:1;align-self:center;margin:auto;display:flex;align-items:center;justify-content:center}
+.clock-holder svg{width:100%;max-height:100%}
+.legend{font-size:10px;gap:12px;margin:2px 0 3px;flex:0 0 auto}
+.legend b{width:8px;height:8px}
+.game-lower{flex:0 0 auto;min-height:0}
+#readControls .group-title{font-size:12px;margin:3px 0 4px!important}
+.answer{grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin-top:3px}
+.number{font-size:17px;padding:9px 1px;border-radius:10px;min-height:39px}
+.minute-row{gap:6px;margin-top:6px}.minute-row button{padding:8px 2px;font-size:14px;border-radius:10px;min-height:37px}
+.selected{font-size:14px;margin:4px 0 0;min-height:17px}
+.feedback{font-size:12px;min-height:21px;padding:2px 0 1px;line-height:1.25}
+.primary{padding:10px;font-size:16px;margin-top:3px;border-radius:11px;min-height:40px}
+#tip{display:none}.instruction{font-size:11px;line-height:1.35;margin:3px 0}
+.btnrow{gap:7px;margin-top:5px}.secondary{padding:9px 3px;font-size:14px}
+@media(max-height:740px){.clock-holder{max-width:min(100%,29dvh,240px)}.question{margin:4px 0 1px}.number{padding:6px 1px;min-height:34px}.minute-row button{padding:6px 2px;min-height:33px}.legend{margin:0}.panel{padding:8px 10px}}
+@media(max-height:620px){.clock-holder{max-width:min(100%,25dvh,195px)}.brand small{display:none}.top{min-height:30px}.number{font-size:15px;min-height:30px;padding:4px 1px}.minute-row button{min-height:30px;padding:4px 2px}.primary{min-height:34px;padding:7px}.feedback{min-height:17px}}
+@media(orientation:landscape) and (max-height:520px){#game{flex-direction:row;gap:8px}.game-upper{flex:1}.game-lower{width:48%;display:flex;flex-direction:column;justify-content:center}.clock-holder{max-width:min(45dvh,220px)}.legend{display:none}}
+</style>
+</head>
+<body><main class="app">
+<header class="top"><div class="brand">🕒 시계 놀이터<small>1학년 · 정각과 30분</small></div><button id="home" class="home-btn hidden">⌂ 처음으로</button></header>
+<section id="menu" class="panel"><h1 class="h1">어떤 공부를 할까요?</h1><div class="muted">시계를 읽고, 손가락으로 바늘도 직접 그려 보아요!</div><div class="modecards"><button class="modecard" data-mode="read"><span class="emoji">👀</span><span><strong>시계 읽기</strong><span>시계를 보고 몇 시인지 맞혀요.</span></span></button><button class="modecard" data-mode="draw"><span class="emoji">✏️</span><span><strong>시계 그리기</strong><span>시각을 보고 시침과 분침을 그려요.</span></span></button></div></section>
+<section id="settings" class="panel hidden"><h1 class="h1" id="setupTitle">시계 읽기</h1><div class="muted">어떤 문제를 풀지 정해 보세요.</div><div class="group-title">문제 종류</div><div class="segments" id="levels"><button class="seg" data-level="hour">정각</button><button class="seg" data-level="half">30분</button><button class="seg sel" data-level="mix">섞어서</button></div><div class="group-title">문제 수</div><div class="segments two" id="counts"><button class="seg" data-count="10">10문제</button><button class="seg sel" data-count="20">20문제</button></div><button class="start" id="start">시작하기 →</button></section>
+<section id="game" class="panel hidden"><div class="game-upper"><div class="game-head"><div class="progress" id="progress">1 / 20문제</div><div class="score" id="score">맞힌 문제 0개</div></div><div class="progressbar"><div id="bar" style="width:0%"></div></div><div class="question" id="question"></div><div id="target" class="target hidden"></div><div id="clock" class="clock-holder" aria-label="숫자 1부터 12까지 표시된 시계"></div><div class="legend"><span><b style="background:#ed5c55"></b>빨간색: 짧은바늘</span><span><b style="background:#3269e9"></b>파란색: 긴바늘</span></div></div><div class="game-lower"><div id="readControls"><div class="group-title" style="margin:10px 0 5px">몇 시인가요?</div><div class="answer" id="hours"></div><div class="minute-row" id="minutes"><button data-min="0">정각 (00분)</button><button data-min="30">30분</button></div><div class="selected" id="selected">시각을 골라 주세요</div></div><div id="drawControls" class="hidden"><p class="instruction">시계의 <b>가운데에서 바깥쪽으로</b> 바늘을 두 번 그려요.<br>바늘을 알맞은 방향 근처에 그리면 <b>정확한 위치로 보정</b>돼요.<br>길게 그린 바늘은 분침, 짧게 그린 바늘은 시침이에요.</p><div class="btnrow"><button class="secondary" id="undo">↶ 한 획 지우기</button><button class="secondary" id="clear">모두 지우기</button></div></div><div id="feedback" class="feedback" role="status" aria-live="polite"></div><button id="check" class="primary">정답 확인</button><div id="tip" class="tip">정답을 맞힐 때까지 계속 도전해요!</div></div></section>
+<section id="end" class="panel hidden"><div class="finish"><div class="trophy">🏆</div><h2>공부를 마쳤어요!</h2><p class="muted" id="endInfo"></p><div class="bigscore" id="endScore"></div><p class="muted">시계 공부를 열심히 했어요!</p><button class="primary" id="again">한 번 더 하기</button><button class="secondary" id="endHome" style="width:100%;margin-top:10px">처음 화면으로</button></div></section>
+</main>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);const state={mode:'read',level:'mix',count:20,index:0,correct:0,attempt:0,answer:null,hour:null,minute:null,strokes:[],live:null,phase:'answer',problems:[]};
+const cx=180,cy=180,R=147;let svg,activePointer=null;
+function show(which){['menu','settings','game','end'].forEach(id=>$(id).classList.toggle('hidden',id!==which));$('home').classList.toggle('hidden',which==='menu');}
+function goHome(){activePointer=null;state.phase='answer';show('menu')}
+$('home').onclick=goHome;$('endHome').onclick=goHome;
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{state.mode=b.dataset.mode;$('setupTitle').textContent=state.mode==='read'?'👀 시계 읽기':'✏️ 시계 그리기';show('settings')});
+function selectSegment(group,button){$(group).querySelectorAll('button').forEach(b=>b.classList.toggle('sel',b===button))}
+$('levels').onclick=e=>{const b=e.target.closest('[data-level]');if(!b)return;state.level=b.dataset.level;selectSegment('levels',b)};
+$('counts').onclick=e=>{const b=e.target.closest('[data-count]');if(!b)return;state.count=Number(b.dataset.count);selectSegment('counts',b)};
+function makeProblems(){const pool=[];for(let h=1;h<=12;h++)for(const min of (state.level==='hour'?[0]:state.level==='half'?[30]:[0,30]))pool.push({h,min});const out=[];let last='';while(out.length<state.count){let choices=pool.filter(p=>`${p.h}:${p.min}`!==last);let p=choices[Math.floor(Math.random()*choices.length)];out.push(p);last=`${p.h}:${p.min}`;}return out;}
+function start(){state.index=0;state.correct=0;state.problems=makeProblems();show('game');nextProblem()};$('start').onclick=start;$('again').onclick=start;
+function createClock(){let s=`<svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="시계판"><circle cx="180" cy="180" r="161" fill="#f7faff" stroke="#dce8fa" stroke-width="3"/><circle cx="180" cy="180" r="147" fill="#fff" stroke="#91addc" stroke-width="5"/>`;
+for(let i=0;i<60;i++){const a=i*Math.PI/30-Math.PI/2;let big=i%5===0;let r1=big?132:139,r2=146;s+=`<line x1="${cx+Math.cos(a)*r1}" y1="${cy+Math.sin(a)*r1}" x2="${cx+Math.cos(a)*r2}" y2="${cy+Math.sin(a)*r2}" stroke="${big?'#8199bd':'#c7d4e7'}" stroke-width="${big?3:1.5}" stroke-linecap="round"/>`;}
+for(let n=1;n<=12;n++){const a=n*Math.PI/6-Math.PI/2;s+=`<text x="${cx+Math.cos(a)*112}" y="${cy+Math.sin(a)*112+9}" font-size="29" text-anchor="middle" font-weight="850" fill="#253b59">${n}</text>`;}
+s+=`<g id="hands"></g><circle cx="180" cy="180" r="7" fill="#273a5a"/><circle cx="180" cy="180" r="3" fill="white"/></svg>`;$('clock').innerHTML=s;svg=$('clock').querySelector('svg');}
+function endpoint(angle,length){return{x:cx+Math.sin(angle)*length,y:cy-Math.cos(angle)*length}}
+function handMarkup(x,y,color,width,dash=''){return `<line x1="180" y1="180" x2="${x.toFixed(2)}" y2="${y.toFixed(2)}" stroke="${color}" stroke-width="${width}" stroke-linecap="round" ${dash?'stroke-dasharray="6 6"':''}/><circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${width/2}" fill="${color}"/>`}
+function renderHands(){let s='';if(state.mode==='read'){let p=state.answer,ha=(p.h%12+p.min/60)*Math.PI/6,ma=p.min*Math.PI/30;let a=endpoint(ha,79),b=endpoint(ma,116);s+=handMarkup(a.x,a.y,'#ed5c55',10)+handMarkup(b.x,b.y,'#3269e9',7)}else{const all=[...state.strokes];if(state.live)all.push(state.live);const sorted=[...all].sort((a,b)=>a.length-b.length);for(let i=0;i<all.length;i++){let st=all[i],color=all.length===2?(st===sorted[0]?'#ed5c55':'#3269e9'):'#8b72d4';s+=handMarkup(st.x,st.y,color,all.length===2?(color==='#ed5c55'?10:7):8,st===state.live?'yes':'');}}$('hands').innerHTML=s}
+function makeHours(){let html='';for(let i=1;i<=12;i++)html+=`<button class="number" data-h="${i}">${i}</button>`;$('hours').innerHTML=html}
+makeHours();$('hours').onclick=e=>{if(state.phase!=='answer')return;let b=e.target.closest('[data-h]');if(!b)return;state.hour=Number(b.dataset.h);$('hours').querySelectorAll('button').forEach(x=>x.classList.toggle('sel',x===b));updateSelected()};$('minutes').onclick=e=>{if(state.phase!=='answer')return;let b=e.target.closest('[data-min]');if(!b)return;state.minute=Number(b.dataset.min);$('minutes').querySelectorAll('button').forEach(x=>x.classList.toggle('sel',x===b));updateSelected()};
+function timeText(p){return `${p.h}시${p.min?' 30분':''}`};function updateSelected(){$('selected').textContent=state.hour===null||state.minute===null?'시각을 골라 주세요':`내 답: ${timeText({h:state.hour,min:state.minute})}`}
+function feedback(s,type=''){$('feedback').textContent=s;$('feedback').className='feedback '+type}
+function nextProblem(){state.phase='answer';state.attempt=0;state.answer=state.problems[state.index];state.hour=null;state.minute=null;state.strokes=[];state.live=null;$('progress').textContent=`${state.index+1} / ${state.count}문제`;$('score').textContent=`맞힌 문제 ${state.correct}개`;$('bar').style.width=`${state.index/state.count*100}%`;$('readControls').classList.toggle('hidden',state.mode!=='read');$('drawControls').classList.toggle('hidden',state.mode!=='draw');$('target').classList.toggle('hidden',state.mode!=='draw');$('clock').classList.toggle('draw',state.mode==='draw');$('question').textContent=state.mode==='read'?'이 시계는 몇 시일까요?':'시계 바늘을 그려 보세요!';$('target').textContent=state.mode==='draw'?timeText(state.answer):'';$('hours').querySelectorAll('button').forEach(b=>b.classList.remove('sel'));$('minutes').querySelectorAll('button').forEach(b=>b.classList.remove('sel'));updateSelected();feedback('');$('check').textContent='정답 확인';$('check').disabled=false;$('undo').disabled=false;$('clear').disabled=false;createClock();renderHands()}
+function afterCheck(correct,errMessage){if(correct){state.correct++;$('score').textContent=`맞힌 문제 ${state.correct}개`;feedback('정답이에요! 참 잘했어요! 🎉','good');state.phase='next';$('check').textContent=state.index===state.count-1?'결과 보기 →':'다음 문제 →';return}state.attempt++;feedback(errMessage+' 정답을 맞힐 때까지 다시 해 보세요!','bad');if(state.mode==='draw'){$('check').textContent='정답 확인';}else{$('check').textContent='정답 확인';}}
+function angleDiff(a,b){let d=Math.abs(a-b)%360;return Math.min(d,360-d)}
+function evaluateDraw(){const strokes=state.strokes;if(strokes.length!==2){feedback('가운데에서 바늘을 두 개 그려 주세요.','info');return}const sorted=[...strokes].sort((a,b)=>a.length-b.length),short=sorted[0],long=sorted[1];if(short.length<32||long.length<58){feedback('바늘이 너무 짧아요. 조금 더 길게 그려 주세요.','info');return}if(long.length<short.length*1.3){feedback('두 바늘의 길이가 비슷해요. 길이 차이를 더 크게 그려 주세요.','info');return}if(long.length>140||short.length>122){feedback('바늘은 시계판 안쪽에 그려 주세요.','info');return}const hourAngle=((state.answer.h%12)+state.answer.min/60)*30,minuteAngle=state.answer.min*6;const hourOK=angleDiff(short.deg,hourAngle)<=12,minuteOK=angleDiff(long.deg,minuteAngle)<=11;let msg=!hourOK&&!minuteOK?'시침과 분침의 방향을 다시 살펴보세요.':!hourOK?'짧은바늘(시침)의 방향을 살펴보세요.':'긴바늘(분침)의 방향을 살펴보세요.';afterCheck(hourOK&&minuteOK,msg)}
+$('check').onclick=()=>{if(state.phase==='next'){state.index++;if(state.index>=state.count){$('endInfo').textContent=`${state.mode==='read'?'시계 읽기':'시계 그리기'} · ${state.count}문제`;$('endScore').textContent=`${state.correct} / ${state.count}`;show('end');return}nextProblem();return}if(state.mode==='read'){if(state.hour===null||state.minute===null){feedback('몇 시인지와 정각/30분을 모두 골라 주세요.','info');return}afterCheck(state.hour===state.answer.h&&state.minute===state.answer.min,'아쉬워요!')}else evaluateDraw()};
+function pointerXY(e){const rect=svg.getBoundingClientRect();return{x:(e.clientX-rect.left)*360/rect.width,y:(e.clientY-rect.top)*360/rect.height}}
+function makeStroke(p){const dx=p.x-cx,dy=p.y-cy,length=Math.hypot(dx,dy);return{x:p.x,y:p.y,length,deg:(Math.atan2(dx,-dy)*180/Math.PI+360)%360}}
+// 두 획이 완성되면 길이로 시침/분침을 구분합니다.
+// 분침은 정각 12, 30분 6을 향하도록, 시침은 정각 해당 숫자,
+// 30분에는 두 숫자의 정확한 중간으로 가까운 방향만 자석처럼 보정합니다.
+// 보정 범위를 벗어난 획은 그대로 남기므로 정답을 자동으로 만들어 주지 않습니다.
+function snapHands(){
+  if(state.strokes.length!==2)return;
+  const ordered=[...state.strokes].sort((a,b)=>a.length-b.length);
+  const hour=ordered[0],minute=ordered[1];
+  if(minute.length<hour.length*1.3)return;
+  const minuteTarget=state.answer.min===30?180:0;
+  const hourTarget=((state.answer.h%12)+state.answer.min/60)*30;
+  for(const [hand,target,tolerance] of [[minute,minuteTarget,17],[hour,hourTarget,17]]){
+    if(angleDiff(hand.deg,target)<=tolerance){
+      const point=endpoint(target*Math.PI/180,hand.length);
+      hand.x=point.x;hand.y=point.y;hand.deg=target;
+    }
+  }
+}
+svg=null;
+$('clock').addEventListener('pointerdown',e=>{if(state.mode!=='draw'||state.phase!=='answer'||state.strokes.length>=2||!svg)return;let p=pointerXY(e);if(Math.hypot(p.x-cx,p.y-cy)>44){feedback('시계 가운데에서 시작해 주세요.','info');return}activePointer=e.pointerId;e.preventDefault();$('clock').setPointerCapture(e.pointerId);state.live=makeStroke(p);renderHands()});
+$('clock').addEventListener('pointermove',e=>{if(e.pointerId!==activePointer||!state.live)return;e.preventDefault();let p=pointerXY(e),dx=p.x-cx,dy=p.y-cy,d=Math.hypot(dx,dy);if(d>139){p.x=cx+dx*139/d;p.y=cy+dy*139/d}state.live=makeStroke(p);renderHands()});
+function stopDrawing(e){if(e.pointerId!==activePointer)return;e.preventDefault();activePointer=null;if(state.live&&state.live.length>=10){state.strokes.push(state.live);snapHands();feedback(state.strokes.length===1?'좋아요! 이제 다른 바늘도 그려 주세요.':'두 바늘을 그렸어요. 정답을 확인해 보세요.','info')}else feedback('가운데에서 바깥쪽으로 조금 더 길게 그려 주세요.','info');state.live=null;renderHands()}
+$('clock').addEventListener('pointerup',stopDrawing);$('clock').addEventListener('pointercancel',stopDrawing);
+$('undo').onclick=()=>{if(state.phase!=='answer')return;state.strokes.pop();state.live=null;feedback('');renderHands()};$('clear').onclick=()=>{if(state.phase!=='answer')return;state.strokes=[];state.live=null;feedback('');renderHands()};
+})();
+</script></body></html>
